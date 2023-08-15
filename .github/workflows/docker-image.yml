@@ -19,4 +19,4 @@ jobs:
     - name: Build and Push Docker Image
       run: |
         docker build -t madhu1607/newwebpage  -f rent4u-html/Dockerfile .
-        docker push madhu1607/newwebpage :latest
+        docker push madhu1607/newwebpage:latest
