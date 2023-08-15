@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-webpage
+  name: newwebpage
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: sample-webpage
+      app: newwebpage
   template:
     metadata:
       labels:
-        app: sample-webpage
+        app: newwebpage
     spec:
       containers:
-      - name: sample-webpage
+      - name: newwebpage
         image: madhu1607/newwebpage
         ports:
         - containerPort: 80
@@ -22,11 +22,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sample-webpage-service
+  name: newwebpage-service
 spec:
   selector:
-    app: sample-webpage
+    app: newwebpage
   ports:
+  
     - protocol: TCP
       port: 80
       targetPort: 80
