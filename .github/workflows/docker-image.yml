@@ -36,7 +36,7 @@ jobs:
         CLUSTER_NAME: ${{ env.GKE_CLUSTER }}
         ZONE_NAME: ${{ env.GKE_ZONE }}
       with:
-        args: apply -f deployment.yml -f service.yml
+        args: apply -f rent4u-html/deployment.yml
           
         
     
