@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: newwebpage
+  name: newwebpage-deployment
 spec:
   replicas: 2
   selector:
@@ -13,10 +13,11 @@ spec:
         app: newwebpage
     spec:
       containers:
-      - name: newwebpage
-        image: madhu1607/newwebpage
+      - name: newwebpage-container
+        image: madhu1607/newwebpage:latest  
         ports:
         - containerPort: 80
+
 
 ---
 apiVersion: v1
@@ -27,8 +28,7 @@ spec:
   selector:
     app: newwebpage
   ports:
-  
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: LoadBalancer
+  type: LoadBalancer  # Change to NodePort or ClusterIP if needed
