@@ -19,7 +19,7 @@ jobs:
          password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build and Push Docker Image
       run: |
-        docker build -t image1 -f rent4u-html/Dockerfile 
+        docker build -t madhu1607/newwebpage:latest ./rent4u-html
         docker push madhu1607/newwebpage:latest
   Deploy:
     needs: build
