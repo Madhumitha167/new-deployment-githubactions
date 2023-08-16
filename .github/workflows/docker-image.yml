@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build -t image1 -f rent4u-html/Dockerfile .
     - name: Login to Dockerhub
       uses: docker/login-action@v1
       with:
@@ -21,7 +19,7 @@ jobs:
          password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build and Push Docker Image
       run: |
-        docker build -t rent4u-html/Dockerfile 
+        docker build -t madhu1607/newwebpage:latest -f rent4u-html/Dockerfile 
         docker push madhu1607/newwebpage:latest
   Deploy:
     needs: build
